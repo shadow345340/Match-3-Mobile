@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://d3xp7gj48wtt"]
+
+[ext_resource type="FontFile" uid="uid://df0mewbr5c6fw" path="res://fonts/LilitaOne-Regular.ttf" id="1_wlifd"]
+
+[resource]
+font = ExtResource("1_wlifd")
+font_size = 75
+outline_size = 64
+outline_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 1)

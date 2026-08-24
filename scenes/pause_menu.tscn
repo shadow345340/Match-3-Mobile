@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://f7w33mvk5hjk"]
+
+[ext_resource type="Script" uid="uid://bxiniu4vj4wln" path="res://scripts/pause_menu.gd" id="1_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://b0jh1a8jsxkjq" path="res://sprites/ui/button_square_header_small_square.png" id="1_n87rw"]
+[ext_resource type="LabelSettings" uid="uid://d3xp7gj48wtt" path="res://resources/options_menu_label_settings.tres" id="2_myx47"]
+[ext_resource type="FontFile" uid="uid://df0mewbr5c6fw" path="res://fonts/LilitaOne-Regular.ttf" id="3_kukqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kukqi"]
+bg_color = Color(0.2901961, 0.87058824, 0.5019608, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+bg_color = Color(0.9843137, 0.57254905, 0.23529412, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="PauseMenu" type="Control" unique_id=654570149]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5d2l8")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=654448436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="TableroPausa" type="TextureRect" parent="." unique_id=944712990]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 202.0
+offset_right = 680.0
+offset_bottom = 836.0
+texture = ExtResource("1_n87rw")
+expand_mode = 1
+
+[node name="TituloPausa" type="Label" parent="TableroPausa" unique_id=238699121]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 41.0
+offset_right = 691.0
+offset_bottom = 156.0
+text = "JUEGO PAUSADO"
+label_settings = ExtResource("2_myx47")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonReanudar" type="Button" parent="TableroPausa" unique_id=1952243982]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 218.0
+offset_right = 615.0
+offset_bottom = 326.0
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = ExtResource("3_kukqi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_kukqi")
+text = "Reanudar"
+
+[node name="BotonMenuPrincipal" type="Button" parent="TableroPausa" unique_id=1918555858]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 346.0
+offset_right = 619.0
+offset_bottom = 446.0
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = ExtResource("3_kukqi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_5d2l8")
+text = "Ir al menu"
+
+[node name="BotonReiniciar" type="Button" parent="TableroPausa" unique_id=1101441915]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 461.0
+offset_right = 619.0
+offset_bottom = 561.0
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = ExtResource("3_kukqi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7mv")
+text = "Reiniciar nivel"

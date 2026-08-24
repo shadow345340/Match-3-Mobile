@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://bref4kf42dr7o"]
+
+[ext_resource type="Script" uid="uid://bxl77elmw05am" path="res://scripts/options_menu.gd" id="1_3xsyx"]
+[ext_resource type="Texture2D" uid="uid://b0jh1a8jsxkjq" path="res://sprites/ui/button_square_header_small_square.png" id="1_liyum"]
+[ext_resource type="LabelSettings" uid="uid://d3xp7gj48wtt" path="res://resources/options_menu_label_settings.tres" id="2_ijpji"]
+[ext_resource type="FontFile" uid="uid://df0mewbr5c6fw" path="res://fonts/LilitaOne-Regular.ttf" id="3_hm4m4"]
+[ext_resource type="Texture2D" uid="uid://82mnxgdyp8qw" path="res://sprites/ui/hslider-graver.png" id="3_lfjc7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm4m4"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16862746, 0.078431375, 0.03137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 6
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xsyx"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16862746, 0.078431375, 0.03137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfjc7"]
+bg_color = Color(0.55823153, 0.8441748, 0.99306995, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16862746, 0.078431375, 0.03137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 6
+shadow_offset = Vector2(0, 4)
+
+[node name="OptionsMenu" type="Control" unique_id=1519061091]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3xsyx")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=1228524293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="VentanaOpciones" type="TextureRect" parent="." unique_id=939953367]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 94.0
+offset_right = 698.0
+offset_bottom = 868.0
+texture = ExtResource("1_liyum")
+
+[node name="TituloOpciones" type="Label" parent="VentanaOpciones" unique_id=1559171935]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 56.0
+offset_right = 550.0
+offset_bottom = 171.0
+text = "OPCIONES"
+label_settings = ExtResource("2_ijpji")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextoMusica" type="Label" parent="VentanaOpciones" unique_id=911907090]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 206.0
+offset_right = 366.0
+offset_bottom = 321.0
+text = "Musica"
+label_settings = ExtResource("2_ijpji")
+
+[node name="ControlMusica" type="HSlider" parent="VentanaOpciones" unique_id=2090572713]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 314.0
+offset_right = 415.2
+offset_bottom = 355.4
+scale = Vector2(5, 5)
+theme_override_constants/grabber_offset = 0
+theme_override_icons/grabber = ExtResource("3_lfjc7")
+max_value = 1.0
+step = 0.5
+value = 0.5
+
+[node name="TextoEfectos" type="Label" parent="VentanaOpciones" unique_id=40873487]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 342.0
+offset_right = 357.0
+offset_bottom = 457.0
+text = "Sonido"
+label_settings = ExtResource("2_ijpji")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlEfectos" type="HSlider" parent="VentanaOpciones" unique_id=1787451818]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 171.0
+offset_right = 429.2
+offset_bottom = 212.4
+scale = Vector2(5, 5)
+theme_override_constants/grabber_offset = 0
+theme_override_icons/grabber = ExtResource("3_lfjc7")
+max_value = 1.0
+step = 0.5
+value = 0.5
+
+[node name="BotonVolver" type="Button" parent="VentanaOpciones" unique_id=1641012160]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 630.0
+offset_right = 620.0
+offset_bottom = 753.0
+theme_override_constants/outline_size = 64
+theme_override_fonts/font = ExtResource("3_hm4m4")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_hm4m4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3xsyx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lfjc7")
+text = "VOLVER AL MENU"

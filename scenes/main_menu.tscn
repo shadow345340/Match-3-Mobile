@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://q8bc812oon3p"]
+
+[ext_resource type="Script" uid="uid://dmb5yp107mfob" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://0iyvs5wsoxbx" path="res://screenshots/screenshot.png" id="2_ekxnf"]
+[ext_resource type="FontFile" uid="uid://df0mewbr5c6fw" path="res://fonts/LilitaOne-Regular.ttf" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://bref4kf42dr7o" path="res://scenes/options_menu.tscn" id="4_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font = ExtResource("3_bqqt6")
+font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 0.518661, 0.7162697, 0.78431374)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.23921569, 0.12941177, 0.07058824, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_size = 10
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(1, 0, 0.49803922, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.39653882, 0.084166326, 0.08479891, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[node name="MainMenu" type="Control" unique_id=445323093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1218526625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -86.24512
+offset_bottom = -696.669
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.164488, 2.7805824)
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=812729463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer" unique_id=1344286618]
+
+[node name="Title" type="Label" parent="MarginContainer/CanvasLayer" unique_id=1282435092]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -199.0
+offset_top = 23.0
+offset_right = 211.0
+offset_bottom = 93.0
+grow_horizontal = 2
+text = "MATCH 3 GAME"
+label_settings = SubResource("LabelSettings_ekxnf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CanvasLayer" unique_id=1351718092]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CanvasLayer/PanelContainer" unique_id=951430349]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/CanvasLayer/PanelContainer/CenterContainer" unique_id=1415629551]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="PlayButton" type="Button" parent="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer" unique_id=858738089]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
+text = "   JUGAR   "
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer" unique_id=1102563937]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
+text = "   OPCIONES   "
+
+[node name="QuitButton" type="Button" parent="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer" unique_id=1063114080]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
+text = "SALIR"
+
+[node name="OptionsMenu" parent="MarginContainer/CanvasLayer" unique_id=1519061091 instance=ExtResource("4_wu84c")]
+visible = false
+
+[connection signal="pressed" from="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer/OptionsButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CanvasLayer/PanelContainer/CenterContainer/ButtonsContainer/QuitButton" to="." method="_on_play_button_pressed"]

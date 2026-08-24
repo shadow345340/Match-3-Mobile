@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://ch8lbhavuqqh1"]
+
+[ext_resource type="FontFile" uid="uid://df0mewbr5c6fw" path="res://fonts/LilitaOne-Regular.ttf" id="1_ujlt3"]
+[ext_resource type="Script" uid="uid://unve2mgs6jqj" path="res://scripts/victory_screen.gd" id="1_wdgif"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdgif"]
+font = ExtResource("1_ujlt3")
+font_size = 100
+outline_size = 64
+outline_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ujlt3"]
+font = ExtResource("1_ujlt3")
+font_size = 75
+outline_size = 64
+outline_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujlt3"]
+bg_color = Color(0.2901961, 0.87058824, 0.5019608, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdgif"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="VictoryScreen" type="Control" unique_id=671729851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdgif")
+
+[node name="FondoTransparente" type="ColorRect" parent="." unique_id=1557615821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="TituloVictoria" type="Label" parent="." unique_id=442595274]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 112.0
+offset_right = 600.0
+offset_bottom = 227.0
+text = "¡GANASTE!"
+label_settings = SubResource("LabelSettings_wdgif")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuntajeFinal" type="Label" parent="." unique_id=1793967150]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 319.0
+offset_right = 722.0
+offset_bottom = 406.0
+text = "Puntaje: 0"
+label_settings = SubResource("LabelSettings_ujlt3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonSiguienteNivel" type="Button" parent="." unique_id=2092796840]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 474.0
+offset_right = 659.0
+offset_bottom = 610.0
+theme_override_fonts/font = ExtResource("1_ujlt3")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujlt3")
+text = "SIGUIENTE"
+
+[node name="BotonMenu" type="Button" parent="." unique_id=751527892]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 643.0
+offset_right = 658.0
+offset_bottom = 779.0
+theme_override_fonts/font = ExtResource("1_ujlt3")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_wdgif")
+text = "MENÚ PRINCIPAL"

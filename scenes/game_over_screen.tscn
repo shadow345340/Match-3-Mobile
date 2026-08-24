@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b1xbhecux8v8o"]
+
+[ext_resource type="Script" uid="uid://b664s61uix3lt" path="res://scripts/game_over_screen.gd" id="1_61w2s"]
+[ext_resource type="FontFile" uid="uid://df0mewbr5c6fw" path="res://fonts/LilitaOne-Regular.ttf" id="1_iwahs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61w2s"]
+font = ExtResource("1_iwahs")
+font_size = 100
+outline_size = 64
+outline_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw6e5"]
+bg_color = Color(0.2901961, 0.87058824, 0.5019608, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa2qn"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="GameOverScreen" type="Control" unique_id=1773824502]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61w2s")
+
+[node name="FondoTransparente" type="ColorRect" parent="." unique_id=1948061079]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="TituloDerrota" type="Label" parent="." unique_id=883197832]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 321.0
+offset_right = 659.0
+offset_bottom = 436.0
+text = "¡GAME OVER!"
+label_settings = SubResource("LabelSettings_61w2s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonReintentar" type="Button" parent="." unique_id=341352936]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 474.0
+offset_right = 634.0
+offset_bottom = 610.0
+theme_override_fonts/font = ExtResource("1_iwahs")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_jw6e5")
+text = "REINTENTAR"
+
+[node name="BotonMenu" type="Button" parent="." unique_id=239945358]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 643.0
+offset_right = 637.0
+offset_bottom = 779.0
+theme_override_fonts/font = ExtResource("1_iwahs")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_wa2qn")
+text = "MENÚ PRINCIPAL"

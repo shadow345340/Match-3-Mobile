@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dm0mjfak74l2e"]
+
+[ext_resource type="Script" uid="uid://doo4w55n8m8gh" path="res://scripts/splash_screen.gd" id="1_hsxvm"]
+[ext_resource type="VideoStream" uid="uid://cxi7lxihdlg3u" path="res://videos/godot_intro_animation_hd.ogv" id="1_n4g2v"]
+
+[node name="SplashScreen" type="Control" unique_id=237937137]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 266.0
+offset_bottom = -428.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hsxvm")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=328597855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_n4g2v")
+autoplay = true
+expand = true
